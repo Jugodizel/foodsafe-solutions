@@ -14,14 +14,25 @@ Start-Process "C:\Users\Petko\ClaudeCodeTester\index.html"
 
 ## Git workflow
 
-All changes must be committed and pushed to `github.com/Jugodizel/foodsafe-solutions` after every meaningful task. Use clear, descriptive commit messages.
+**Commit and push after every completed task — no exceptions.** The goal is that GitHub always reflects the latest working state so no work is ever lost and any change can be reverted.
+
+Rules:
+- Commit as soon as a task is done, not batched at the end of a session.
+- Always push immediately after committing (`git push` every time).
+- Stage only the files relevant to the change — never `git add .` blindly.
+- Write commit messages that describe **what changed and why**, not just "update files".
 
 ```powershell
 Set-Location "C:\Users\Petko\ClaudeCodeTester"
-git add <files>
-git commit -m "short description of what changed and why"
+git add <specific files>
+git commit -m "concise description of what changed and why"
 git push
 ```
+
+Good commit message examples:
+- `Add EN/SR language switcher with localStorage persistence`
+- `Fix hero image URL — short-form Unsplash IDs don't resolve on CDN`
+- `Update stat: 15+ years experience → 25+`
 
 ## Architecture
 
