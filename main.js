@@ -320,5 +320,10 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
+// ===== KEEP ALIVE =====
+// Pings the Render server every 14 minutes to prevent it from sleeping
+const HEALTH_URL = 'https://foodsafe-api-3ezx.onrender.com/health';
+setInterval(() => fetch(HEALTH_URL).catch(() => {}), 14 * 60 * 1000);
+
 // ===== INIT =====
 applyLanguage(currentLang);
