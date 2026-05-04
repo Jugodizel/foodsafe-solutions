@@ -243,9 +243,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ===== CONTACT FORM =====
+// Update API_URL after deploying to Render (e.g. https://foodsafe-api.onrender.com/api/contact)
+const API_URL = 'https://foodsafe-api.onrender.com/api/contact';
+
 const form = document.getElementById('contact-form');
 if (form) {
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   function validateField(input) {
     const group = input.closest('.form-group');
     const empty = input.value.trim() === '';
@@ -254,25 +258,53 @@ if (form) {
     input.classList.toggle('error', empty || badEmail);
     return !(empty || badEmail);
   }
-  form.addEventListener('submit', e => {
+
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     const fields = form.querySelectorAll('[required]');
     let valid = true;
     fields.forEach(f => { if (!validateField(f)) valid = false; });
     if (!valid) return;
+
     const btn = form.querySelector('button[type="submit"]');
     const origText = btn.textContent;
     btn.textContent = currentLang === 'sr' ? 'Slanje…' : 'Sending…';
     btn.disabled = true;
-    setTimeout(() => {
-      form.reset();
+
+    const payload = {
+      name: form.querySelector('#f-name').value.trim(),
+      email: form.querySelector('#f-email').value.trim(),
+      company: form.querySelector('#f-company').value.trim(),
+      service: form.querySelector('#f-service').value,
+      message: form.querySelector('#f-message').value.trim()
+    };
+
+    try {
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        form.reset();
+        const success = document.getElementById('form-success');
+        success.classList.add('visible');
+        setTimeout(() => success.classList.remove('visible'), 6000);
+      } else {
+        alert(data.error || (currentLang === 'sr' ? 'Greška. Pokušajte ponovo.' : 'Something went wrong. Please try again.'));
+      }
+    } catch {
+      alert(currentLang === 'sr'
+        ? 'Nije moguće poslati poruku. Kontaktirajte nas direktno.'
+        : 'Could not send message. Please contact us directly.');
+    } finally {
       btn.textContent = origText;
       btn.disabled = false;
-      const success = document.getElementById('form-success');
-      success.classList.add('visible');
-      setTimeout(() => success.classList.remove('visible'), 5000);
-    }, 900);
+    }
   });
+
   form.querySelectorAll('[required]').forEach(input => {
     input.addEventListener('input', () => {
       if (input.closest('.form-group').classList.contains('has-error')) validateField(input);

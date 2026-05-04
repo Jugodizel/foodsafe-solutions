@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: foodsafe-api
+    env: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: GMAIL_USER
+        value: foodsafesolutions.info@gmail.com
+      - key: GMAIL_APP_PASSWORD
+        sync: false
+      - key: RECIPIENT_EMAIL
+        value: foodsafesolutions.info@gmail.com
+      - key: ALLOWED_ORIGIN
+        value: "*"
