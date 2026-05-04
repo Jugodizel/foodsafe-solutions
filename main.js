@@ -244,7 +244,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // ===== CONTACT FORM =====
 // Update API_URL after deploying to Render (e.g. https://foodsafe-api.onrender.com/api/contact)
-const API_URL = 'https://foodsafe-api.onrender.com/api/contact';
+const API_URL = 'https://foodsafe-api-3ezx.onrender.com/api/contact';
 
 const form = document.getElementById('contact-form');
 if (form) {
