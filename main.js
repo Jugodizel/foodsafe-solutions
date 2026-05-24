@@ -39,7 +39,7 @@ const translations = {
     ind4_title: 'Startups & SMEs', ind4_desc: 'Growing food businesses that need professional-grade systems without an in-house QA team.',
     about_label: 'About Us',
     about_title: 'Deep Expertise.<br>Real-World Results.',
-    about_desc: 'FoodSafe Solutions was built on the belief that food safety should be practical, not bureaucratic. We combine rigorous technical knowledge with hands-on experience across food manufacturing, laboratory management, and international certification bodies.',
+    about_desc: 'FoodLogic was built on the belief that food safety should be practical, not bureaucratic. We combine rigorous technical knowledge with hands-on experience across food manufacturing, laboratory management, and international certification bodies.',
     cred1_title: '25+ Years in Food Safety Management', cred1_desc: 'Extensive hands-on experience across production environments, quality teams, and regulatory landscapes.',
     cred2_title: 'Laboratory Management Background', cred2_desc: 'Deep expertise in microbiological risk assessment, analytical method validation, and lab accreditation processes.',
     cred3_title: 'Certified Lead Auditor', cred3_desc: 'Qualified to conduct and prepare businesses for ISO 22000, HACCP, BRC, and IFS audits at all levels.',
@@ -85,7 +85,7 @@ const translations = {
     footer_desc: 'Expert food safety consulting, quality systems implementation, and laboratory expertise for food businesses worldwide.',
     footer_services_title: 'Services', footer_company_title: 'Company',
     footer_link_about: 'About Us', footer_contact_title: 'Get in Touch',
-    footer_copyright: '© 2026 FoodSafe Solutions. All rights reserved.',
+    footer_copyright: '© 2026 FoodLogic. All rights reserved.',
     footer_tagline: 'Food Safety & Quality Consulting',
   },
   sr: {
@@ -127,7 +127,7 @@ const translations = {
     ind4_title: 'Startupi i MSP', ind4_desc: 'Rastuća prehrambena preduzeća kojima su potrebni profesionalni sistemi bez sopstvenog QA tima.',
     about_label: 'O nama',
     about_title: 'Duboka stručnost.<br>Pravi rezultati.',
-    about_desc: 'FoodSafe Solutions je osnovan na uverenju da bezbednost hrane treba da bude praktična, a ne birokratska. Kombinujemo rigorozno tehničko znanje sa praktičnim iskustvom u prehrambenoj industriji, upravljanju laboratorijama i međunarodnim sertifikacionim telima.',
+    about_desc: 'FoodLogic je osnovan na uverenju da bezbednost hrane treba da bude praktična, a ne birokratska. Kombinujemo rigorozno tehničko znanje sa praktičnim iskustvom u prehrambenoj industriji, upravljanju laboratorijama i međunarodnim sertifikacionim telima.',
     cred1_title: '25+ godina u upravljanju bezbednošću hrane', cred1_desc: 'Obimno praktično iskustvo u proizvodnim sredinama, timovima za kvalitet i regulatornim okvirima.',
     cred2_title: 'Iskustvo u upravljanju laboratorijom', cred2_desc: 'Duboko znanje u proceni mikrobiološkog rizika, validaciji analitičkih metoda i akreditacionim procesima.',
     cred3_title: 'Sertifikovani vodeći auditor', cred3_desc: 'Kvalifikovan za sprovođenje i pripremu preduzeća za ISO 22000, HACCP, BRC i IFS audite na svim nivoima.',
@@ -173,7 +173,7 @@ const translations = {
     footer_desc: 'Stručni konsalting bezbednosti hrane, implementacija sistema kvaliteta i laboratorijska ekspertiza za prehrambena preduzeća širom sveta.',
     footer_services_title: 'Usluge', footer_company_title: 'Kompanija',
     footer_link_about: 'O nama', footer_contact_title: 'Kontakt',
-    footer_copyright: '© 2026 FoodSafe Solutions. Sva prava zadržana.',
+    footer_copyright: '© 2026 FoodLogic. Sva prava zadržana.',
     footer_tagline: 'Konsalting bezbednosti i kvaliteta hrane',
   }
 };
@@ -200,8 +200,8 @@ function applyLanguage(lang) {
   });
   document.documentElement.lang = lang;
   document.title = lang === 'sr'
-    ? 'FoodSafe Solutions — Konsalting bezbednosti hrane'
-    : 'FoodSafe Solutions — Food Safety & Quality Consulting';
+    ? 'FoodLogic — Konsalting bezbednosti hrane'
+    : 'FoodLogic — Food Safety & Quality Consulting';
   localStorage.setItem('lang', lang);
   currentLang = lang;
 }

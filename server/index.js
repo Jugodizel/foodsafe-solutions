@@ -52,7 +52,7 @@ app.post('/api/contact', contactLimiter, [
   <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;">
     <div style="background:#0D1F3C;padding:28px 32px;border-radius:10px 10px 0 0;">
       <h1 style="color:#10B981;margin:0;font-size:22px;font-weight:700;">New Enquiry</h1>
-      <p style="color:rgba(255,255,255,0.6);margin:6px 0 0;font-size:13px;">FoodSafe Solutions — Contact Form</p>
+      <p style="color:rgba(255,255,255,0.6);margin:6px 0 0;font-size:13px;">FoodLogic — Contact Form</p>
     </div>
     <div style="background:#f4f7fb;padding:28px 32px;border-radius:0 0 10px 10px;border:1px solid #e2e8f0;border-top:none;">
       <table style="width:100%;border-collapse:collapse;">
@@ -81,7 +81,7 @@ app.post('/api/contact', contactLimiter, [
 
   try {
     await transporter.sendMail({
-      from: `"FoodSafe Solutions Website" <${process.env.GMAIL_USER}>`,
+      from: `"FoodLogic Website" <${process.env.GMAIL_USER}>`,
       to: process.env.RECIPIENT_EMAIL,
       replyTo: email,
       subject: `New enquiry from ${name}${company ? ` — ${company}` : ''}`,
@@ -96,4 +96,4 @@ app.post('/api/contact', contactLimiter, [
 
 app.get('/health', (_req, res) => res.json({ status: 'ok' }));
 
-app.listen(PORT, () => console.log(`FoodSafe API running on port ${PORT}`));
+app.listen(PORT, () => console.log(`FoodLogic API running on port ${PORT}`));

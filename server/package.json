@@ -1,7 +1,7 @@
 {
-  "name": "foodsafe-solutions-api",
+  "name": "foodlogic-api",
   "version": "1.0.0",
-  "description": "Contact form backend for FoodSafe Solutions",
+  "description": "Contact form backend for FoodLogic",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Static single-page website for **FoodSafe Solutions** — a food safety and quality consulting business. No build step, no framework, no package manager. Open `index.html` directly in a browser to run.
+Static single-page website for **FoodLogic** — a food safety and quality consulting business. No build step, no framework, no package manager. Open `index.html` directly in a browser to run.
 
 ## Running the site
 
